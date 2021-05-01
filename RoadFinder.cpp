@@ -44,9 +44,6 @@ Mat RoadFinder::generate_Hough(bool find_lines, bool find_circles) {
 
 	Mat out = input_img.clone();
 
-	int max_pixels = out.rows * out.cols;
-	// Copy edges to the images that will display the results in BGR
-	//cvtColor(edge_img, out, COLOR_GRAY2BGR);
 	//lines detection
 	if (find_lines) {
 		HoughLines(edge_img, lines, rho_hough, theta_hough, thrsh_hough);

@@ -10,7 +10,6 @@ comments:
 
 */
 
-
 using namespace cv;
 
 //parameters
@@ -24,7 +23,6 @@ const bool find_circles = true;
 
 const int max_thrsh_hough = 1000;
 
-
 String window_name = "Road Finder";
 String canny_string = "Canny";
 String hough_string = "Hough";
@@ -36,7 +34,6 @@ void onHoughTrackbarThrsh(int pos, void* userdata);
 void onHoughTrackbarRho(int pos, void* userdata);
 void onHoughTrackbarTheta(int pos, void* userdata);
 void onHoughTrackbarCircle(int pos, void* userdata);
-
 
 
 int main(void)
@@ -93,7 +90,6 @@ void onCannyTrackbarThrsh(int thrsh, void* userdata) {
 	RoadFinder* road_finder = static_cast<RoadFinder*>(userdata);
 	road_finder->low_thrsh_canny = thrsh;
 	Mat out = road_finder->generate_Canny();
-
 	imshow(canny_string, out);
 }
 
@@ -102,9 +98,7 @@ void onCannyTrackbarSize(int gauss_size, void* userdata) {
 	cout << road_finder->gauss_size << endl;
 	road_finder->gauss_size = gauss_size;
 	cout << road_finder->gauss_size << endl;
-
 	Mat out = road_finder->generate_Canny();
-
 	imshow(canny_string, out);
 }
 
